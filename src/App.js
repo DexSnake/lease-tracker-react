@@ -15,9 +15,15 @@ function App() {
 	const [availableMiles, setAvailableMiles] = React.useState('')
 	const [error, setError] = React.useState(false)
 
+	const setBlur = (e) => {
+		if (e.keyCode === 13) {
+			e.target.blur()
+		}
+	}
+
 	// If the enter key is pressed inside the input box, and there is a valid number, it will run the calculation, else it will throw an error
 	const calculate = (e) => {
-		if (e.key === 'Enter' && inputMiles !== '') {
+		if (inputMiles !== '') {
 			const miles = mileage - inputMiles
 			setAvailableMiles(miles)
 			if (isNaN(miles) || inputMiles === '') {
@@ -37,7 +43,7 @@ function App() {
 		<div className="App">
 			<h1>Mileage Tracker</h1>
 			<img src={mazda} alt="Red Mazda CX-5" className="vehicle-image"></img>
-			<input type="tel" placeholder="Enter Mileage" onChange={(e) => setInputMiles(e.target.value)} onKeyPress={calculate} pattern="[0-9]" min="1" max="1000000" />
+			<input type="text" inputMode="numeric" placeholder="Enter Mileage" onChange={(e) => setInputMiles(e.target.value)} onKeyDown={setBlur} onBlur={calculate} pattern="[0-9]" min="1" max="1000000" />
 			{error ? <p className="error">Please Enter a Number</p> : null}
 			<div className="output-container" style={{ display: `${availableMiles ? 'block' : 'none'}` }}>
 				{availableMiles > 0 ? (
