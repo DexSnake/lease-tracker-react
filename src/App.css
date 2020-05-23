@@ -1,38 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* CSS Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Start Custom CSS */
+body {
+	background-color: #1a3d54;
+	font-family: 'Roboto', sans-serif;
+	padding: 1rem;
+	text-align: center;
+}
+
 .App {
-  text-align: center;
+	max-width: 500px;
+	margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+	font-size: 4rem;
+	color: #ffcd00;
+	text-align: center;
+	margin: 0;
+	font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.vehicle-image {
+	height: 230px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input {
+	border: none;
+	background-color: #152734;
+	font-size: 3rem;
+	padding: 0.5rem 1rem;
+	text-align: center;
+	color: #fff;
+	max-width: 300px;
+	box-shadow: none;
 }
 
-.App-link {
-  color: #61dafb;
+input:focus {
+	box-shadow: rgb(58, 127, 172) 0px 0px 1.5px 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error {
+	font-size: 1.2rem;
+	color: #f76161;
+	margin-top: 1rem;
+}
+
+.output-container {
+	color: #fff;
+	font-size: 2rem;
+	margin-top: 2rem;
+}
+
+.mileage-symbol {
+	width: 120px;
+}
+
+.output-container p {
+	margin-top: 2rem;
+	line-height: 1.2;
+}
+
+.positive-miles {
+	color: #adff97;
+}
+
+.negative-miles {
+	color: #ffbc55;
+}
+
+@media screen and (max-width: 500px) {
+	h1 {
+		font-size: 2.5rem;
+	}
+	.vehicle-image {
+		height: 180px;
+	}
+	input {
+		font-size: 2rem;
+	}
+	.mileage-symbol {
+		width: 100px;
+	}
+	.output-container {
+		font-size: 1.6rem;
+	}
 }
